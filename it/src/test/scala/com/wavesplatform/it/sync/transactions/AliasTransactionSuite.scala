@@ -138,8 +138,5 @@ class AliasTransactionSuite extends BaseTransactionSuite with TableDrivenPropert
     sender.aliasByAddress(address).find(_.endsWith(alias)).get
   }
   
-  private def randomAlias(): String = {
-    s"testalias.${Random.alphanumeric take 9 mkString}".toLowerCase
-  }
-
+  private def randomAlias(): String = s"testalias.${Random.alphanumeric.take(9).mkString}".toLowerCase
 }
